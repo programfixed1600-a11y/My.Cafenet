@@ -1,0 +1,6 @@
+{
+  "name": "کافینت هوشمند",
+  "description": "سامانه جامع و هوشمند خدمات دیجیتال کافی‌نت و پیشخوان دولت",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
