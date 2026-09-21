@@ -31,16 +31,17 @@ jobs:
 
       - name: Create google-services.json
         run: |
-          echo '{
+          cat > app/google-services.json << 'EOF'
+          {
             "project_info": {
-              "project_number": "000000000000",
+              "project_number": "123456789012",
               "project_id": "cafenet-smart",
               "storage_bucket": "cafenet-smart.appspot.com"
             },
             "client": [
               {
                 "client_info": {
-                  "mobilesdk_app_id": "1:000000000000:android:0000000000000000",
+                  "mobilesdk_app_id": "1:123456789012:android:abcdef1234567890",
                   "android_client_info": {
                     "package_name": "com.cafenet.smart"
                   }
@@ -48,7 +49,7 @@ jobs:
                 "oauth_client": [],
                 "api_key": [
                   {
-                    "current_key": "YOUR_API_KEY_HERE"
+                    "current_key": "AIzaSyDUMMY_KEY_FOR_BUILD_ONLY_123456"
                   }
                 ],
                 "services": {
@@ -59,7 +60,8 @@ jobs:
               }
             ],
             "configuration_version": "1"
-          }' > app/google-services.json
+          }
+          EOF
 
       - name: Build APK
         run: gradle assembleDebug assembleRelease --no-daemon --stacktrace
