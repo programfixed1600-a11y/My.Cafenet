@@ -63,10 +63,11 @@ jobs:
           }
           EOF
 
-      - - name: Build APK
-  run: |
-    ls -la
-    gradle assembleDebug assembleRelease --no-daemon --stacktrace
+      - name: Build APK
+        run: |
+          ls -la
+          gradle assembleDebug assembleRelease --no-daemon --stacktrace
+
       - name: Upload APK files
         uses: actions/upload-artifact@v4
         with:
